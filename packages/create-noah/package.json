@@ -1,0 +1,33 @@
+{
+  "name": "@noah/create-noah-test",
+  "version": "0.1.13",
+  "type": "module",
+  "author": "Noah",
+  "bin": {
+    "create-noah": "index.js",
+    "cva": "index.js"
+  },
+  "files": [
+    "index.js",
+    "template-*"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=14.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.bitmartpro.com/noahcustody/noah-fe",
+    "directory": "packages/create-noah"
+  },
+  "dependencies": {
+    "@noah/create-noah-test": "^0.1.7",
+    "chalk": "^4.1.2",
+    "commander": "^9.1.0",
+    "kolorist": "^1.5.1",
+    "minimist": "^1.2.6",
+    "ora": "^5.4.1",
+    "prompts": "^2.4.2",
+    "shelljs": "^0.8.5"
+  }
+}

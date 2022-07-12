@@ -1,0 +1,15 @@
+{
+  "name": "noah-cli",
+  "version": "1.0.0",
+  "description": "Noah前端团队项目脚手架",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.bitmartpro.com:noahcustody/noah-fe.git"
+  },
+  "author": "",
+  "license": "ISC"
+}

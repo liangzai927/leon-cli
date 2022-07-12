@@ -1,0 +1,68 @@
+{
+  "name": "vue-js",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "apienv=local vite --mode dev",
+    "mock": "apienv=local vite --mode mock",
+    "build": "vite build --mode prod",
+    "preview": "vite preview",
+    "prettier": "prettier --write ./src/**/*{.js,.vue}",
+    "prepare": "husky install",
+    "lint": "pnpm run lint:script && pnpm run lint:style",
+    "lint:style": "stylelint --fix \"src/**/*.{css,scss}\"",
+    "lint:script": "eslint --ext .js,.jsx,.vue --fix --quiet ./"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "nprogress": "^0.2.0",
+    "pinia": "^2.0.14",
+    "sass": "^1.52.2",
+    "vue": "^3.2.25",
+    "vue-router": "^4.0.15"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.0.1",
+    "@commitlint/config-conventional": "^17.0.0",
+    "@vitejs/plugin-vue": "^2.3.3",
+    "@vue/eslint-config-prettier": "^7.0.0",
+    "eslint": "^8.0.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-vue": "^9.0.1",
+    "husky": "^8.0.0",
+    "lint-staged": "^12.4.3",
+    "postcss": "^8.4.14",
+    "postcss-scss": "^4.0.4",
+    "prettier": "^2.6.2",
+    "stylelint": "^14.8.5",
+    "stylelint-config-recess-order": "^3.0.0",
+    "stylelint-config-standard": "^25.0.0",
+    "stylelint-config-standard-scss": "^4.0.0",
+    "stylelint-order": "^5.0.0",
+    "stylelint-scss": "^4.2.0",
+    "unplugin-auto-import": "^0.8.7",
+    "vite": "^2.9.9",
+    "vite-plugin-eslint": "^1.6.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*{.vue,.js}": [
+      "npm run lint:script",
+      "git add --force"
+    ],
+    "*.{css,scss}": [
+      "npm run lint:style",
+      "git add --force"
+    ]
+  }
+}
